@@ -1,0 +1,5 @@
+<template src="./$componentName.html"></template>
+
+<script lang="ts" src="./$componentName.ts"></script>
+
+<style lang="scss" src="./$componentName.scss"></style>
