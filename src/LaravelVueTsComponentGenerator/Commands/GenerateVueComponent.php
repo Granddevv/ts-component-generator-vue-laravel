@@ -23,15 +23,8 @@ class GenerateVueComponent extends GeneratorCommand {
     protected $description = 'Generate new vue component';
     
     protected $type = 'Component';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        parent::__construct();
-    }
+    
+    private $current_stub;
 
     /**
      * Get the destination class path.
