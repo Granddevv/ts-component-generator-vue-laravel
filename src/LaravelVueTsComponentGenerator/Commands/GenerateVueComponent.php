@@ -21,9 +21,7 @@ class GenerateVueComponent extends GeneratorCommand {
      * @var string
      */
     protected $description = 'Generate new vue component';
-    
     protected $type = 'Component';
-    
     private $current_stub;
 
     /**
@@ -54,7 +52,7 @@ class GenerateVueComponent extends GeneratorCommand {
             'scss.stub' => __DIR__ . '/../../resources/stubs/scss.stub',
         ];
     }
-    
+
     /**
      * Build the class with the given name.
      *
@@ -65,12 +63,16 @@ class GenerateVueComponent extends GeneratorCommand {
      */
     protected function buildClass($name) {
         $replace = [
-            'componentName' => $name
+            '$componentName' => $name
         ];
 
         return str_replace(
             array_keys($replace), array_values($replace), $this->generateClass($name)
         );
+    }
+
+    protected function generateClass($name) {
+        return $this->files->get($this->current_stub);
     }
 
     /**
@@ -80,19 +82,19 @@ class GenerateVueComponent extends GeneratorCommand {
      */
     public function handle() {
         $this->comment('Generating new vue typescript component.');
-        
+
         $path = $this->getPath(strtolower($this->getNameInput()));
         if ($this->alreadyExists($this->getNameInput())) {
-            $this->error($this->type.' already exist!');
+            $this->error($this->type . ' already exist!');
             return false;
         }
 
         // Create component files
 
-        foreach($this->getStub() as $name=>$stub){
+        foreach ($this->getStub() as $name => $stub) {
             $this->current_stub = $stub;
-            $this->makeDirectory($path.'/'.$name);
-            $this->files->put($path.'/'.$name, $this->buildClass($this->getNameInput()));
+            $this->makeDirectory($path . '/' . $name);
+            $this->files->put($path . '/' . $name, $this->buildClass($this->getNameInput()));
         }
 
         $this->info('Component generated successfully.');
