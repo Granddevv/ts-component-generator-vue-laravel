@@ -4,7 +4,7 @@ namespace Frogbob\LaravelVueTSComponentGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelVueTSComponentgeneratorProvider extends ServiceProvider {
+class LaravelVueTSComponentGeneratorProvider extends ServiceProvider {
     
     protected $commands = [
         Commands\GenerateVueComponent::class
