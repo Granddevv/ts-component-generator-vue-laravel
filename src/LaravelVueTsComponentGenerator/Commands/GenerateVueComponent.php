@@ -62,17 +62,6 @@ class GenerateVueComponent extends GeneratorCommand {
         ];
     }
     
-
-    /**
-     * Determine if the class already exists.
-     *
-     * @param  string  $rawName
-     * @return bool
-     */
-    protected function alreadyExists($rawName){
-        return $this->files->exists($this->getPath($this->getNameInput()));
-    }
-
     /**
      * Build the class with the given name.
      *
