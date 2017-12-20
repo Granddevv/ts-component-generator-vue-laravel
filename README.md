@@ -29,7 +29,7 @@ composer require frogbob/laravel-vue-ts-component-generator
 Next, add the service provider to `app/config/app.php`
 
 ```
-Frogbob\LaravelVueTSComponentGenerator\LaravelVueTSComponentGeneratorProvider::class,
+Frogbob\LaravelVueTsComponentGenerator\LaravelVueTsComponentGeneratorProvider::class,
 ```
 
 

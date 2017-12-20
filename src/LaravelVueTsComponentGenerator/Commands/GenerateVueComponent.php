@@ -1,6 +1,6 @@
 <?php
 
-namespace Frogbob\LaravelVueTSComponentGenerator\Commands;
+namespace Frogbob\LaravelVueTsComponentGenerator\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Traits\Macroable;
