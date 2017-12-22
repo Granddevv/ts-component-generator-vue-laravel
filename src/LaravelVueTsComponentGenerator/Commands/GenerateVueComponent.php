@@ -45,11 +45,12 @@ class GenerateVueComponent extends GeneratorCommand {
     }
 
     protected function getStub() {
+        $name = $this->getNameInput();
         return [
-            'vue.stub' => __DIR__ . '/../../resources/stubs/vue.stub',
-            'ts.stub' => __DIR__ . '/../../resources/stubs/ts.stub',
-            'html.stub' => __DIR__ . '/../../resources/stubs/html.stub',
-            'scss.stub' => __DIR__ . '/../../resources/stubs/scss.stub',
+            $name . '.vue' => __DIR__ . '/../../resources/stubs/vue.stub',
+            $name . '.ts' => __DIR__ . '/../../resources/stubs/ts.stub',
+            $name . '.html' => __DIR__ . '/../../resources/stubs/html.stub',
+            $name . '.scss' => __DIR__ . '/../../resources/stubs/scss.stub'
         ];
     }
 
