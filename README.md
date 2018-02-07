@@ -1,9 +1,4 @@
 Laravel-Vue-TS-Component-Generator
-====================
-
-
-![Laravel-Vue-TS-Component-Generator](img/laravel-vue-ts-component-generator.png)
-
 
 **Generate vue typescript components.**
 
